@@ -48,10 +48,10 @@ def run(config_file):
     p.add_reporter(neat.StdOutReporter(True))
     stats = neat.StatisticsReporter()
     p.add_reporter(stats)
-    p.add_reporter(neat.Checkpointer(1000-1))
+    p.add_reporter(neat.Checkpointer(5000-1))
 
     # Run for up to 300 generations.
-    winner = p.run(eval_genomes, 1000)
+    winner = p.run(eval_genomes, 5000)
 
     # Display the winning genome.
     print('\nBest genome:\n{!s}'.format(winner))
@@ -70,8 +70,6 @@ def run(config_file):
 
     #p = neat.Checkpointer.restore_checkpoint('neat-checkpoint-4')
     #p.run(eval_genomes, 10)
-
-
 
 
 if __name__ == '__main__':
